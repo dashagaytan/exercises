@@ -28,10 +28,12 @@
 
 .right {
     align-self: flex-end;
-    background-color: lightblue;
+    background-color: rgb(131, 196, 239);
+    border-radius: 50px;
 }
 
 .left {
     align-self: flex-start;
-    background-color: burlywood;
+    background-color: rgb(206, 205, 205);
+    border-radius: 50px;
 }
