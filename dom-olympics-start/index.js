@@ -33,4 +33,8 @@ clearButton.addEventListener("click", function(event){
     }
 })
 
-// theme toggle 
+// theme toggle manipulation
+const blueGrayTheme = true;
+const yellowGreenTheme = false;
+
+const toggleButton = document.querySelector("there-drop-down") // selecting a single element from document 
