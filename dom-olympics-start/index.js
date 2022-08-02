@@ -8,7 +8,7 @@ h1.style.textAlign = "center"
 
 // insert name and text using innerHTML
 const subTitle = document.createElement("p")
-subTitle.innerHTML += "<span style = 'color: brown' class = 'yourName'> Dasha </span> made this JavaScript"
+subTitle.innerHTML += "<span style = 'color: burlywood' class = 'yourName'> Dasha </span> made this JavaScript"
 subTitle.className = "p"
 
 document.getElementById("header").appendChild(subTitle);
