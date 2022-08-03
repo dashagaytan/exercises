@@ -37,7 +37,7 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
   for(var j = 0; j < peopleWhoWantToSeeMadMaxFuryRoad.length; j++){
     if(peopleWhoWantToSeeMadMaxFuryRoad[j].age >= 18){
         console.log("old enough");
-    } else{
+    } else {
         console.log("not old enough");
     }
   }
