@@ -1,12 +1,12 @@
 //for loop that prints out numbers 1-9
-const numbers = [1,2,3,4,5,6,7,8,9];
-
-for(let i = 0; i < numbers.length; i++){
-    console.log(numbers[i]);
+for(let i = 0; i < 10; i++){
+    console.log(i);
 }
 
 // for loop that decrements 9-0
-
+for(let i = 10; i >= 0; i--){
+    console.log(i);
+}
 
 // for loop that prints an array of fruits
 const fruit = ["banana", "orange", "apple", "kiwi"]
