@@ -26,6 +26,17 @@ console.log(numbers);
 // loop that prints only event numbers 0-100
 for (let i = 0; i <= 100; i++){
     if(i % 2 === 0){
-        console.log(i);
+        console.log(i + " is an even number");
     }
 }
+
+// loop that will pushe every other fruit to an array 
+const fruits = ["banana", "orange", "apple", "kiwi", "pear", "peach"]
+const myFruit = []  // push new array into myFruit
+for (let i = 0; i < fruits.length; i++){
+    if( i % 2 === 0){
+        myFruit.push(fruits[i]) 
+    }
+}
+console.log(myFruit);
+
