@@ -15,4 +15,10 @@ for (let i = 0; i < fruit.length; i++){
     console.log(fruit[i]);
 }
 
-//Bronze
+//Bronze Medal
+// loop that pushes number 0-9 to an array
+const numbers = []
+for (let i = 0; i < 10; i ++){
+    numbers[i] = i; 
+}
+console.log(numbers);
