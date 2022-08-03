@@ -22,3 +22,10 @@ for (let i = 0; i < 10; i ++){
     numbers[i] = i; 
 }
 console.log(numbers);
+
+// loop that prints only event numbers 0-100
+for (let i = 0; i <= 100; i++){
+    if(i % 2 === 0){
+        console.log(i);
+    }
+}
