@@ -17,4 +17,4 @@ switch(yourChoices){
     case "3":
         console.log("The door won't open! Try again.");
         break;
-}
+};
