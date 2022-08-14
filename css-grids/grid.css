@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+
+}
+
+.grid-container > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: gird;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.box1 {
+    background-color:  limegreen;
+    grid-template-columns: 1/2;
+}
+.box2 {
+    background-color: darkorange;
+    grid-template-columns: 2/4;
+}
+
+.box3 {
+    background-color:  pink;
+    grid-template-columns: 1/2;
+}
+
+.box4 {
+    background-color:  rebeccapurple;
+    grid-template-columns: 1/2;
+}
+.box5 {
+    background-color:  lightblue;
+    grid-template-columns: 1/2;
+}
