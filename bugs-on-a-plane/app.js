@@ -9,12 +9,15 @@ function formAlert{} {
     var gender = form.elements["gender"].value;
     var location = form.elements["travel-location"].value;
     var diet = {};
+
     if (form.elements['vegan'].checked) {
         var diet.pop(document.getElementById("vegan").value);
     }
+
     if (form.elements['gluten'].checked) {
         diet.push(document.getElementById('gluten').value);
     }
+    
     if (form.elements['paleo'].checked) {
         diet.push(document.getElementById('paleo').value);
     }
