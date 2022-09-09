@@ -8,9 +8,33 @@
     <title>Travel Form</title>
 </head>
 <body>
-    
+    <form name="travelForm" class="myForm">
+        <div class="userInfo">
+            First Name: <input type="text" name="firstName" placeholder="First Name" required>
+            Last Name: <input type="text" name="lastName" placeholder="Last Name" required>
+            Age: <input type="number" name="age" required>
+            Male: <input type="radio" name="gender" value="male">
+            Female: <input type="radio" name="gender" value="female">
+        </div>
+        <div class="travelOption">
+            <label for="city">Select City: </label>
+            <select name="city" class="city">
+                <option value="Chicago">Chicago</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="New York">New Yord</option>
+                <option value="San Francisco">San Francisco</option>
+            </select>
+        </div>
+        <div class="food">
+            Dietery Restrictions, select all that apply: 
+                Vegetarian: <input type="checkbox" name="diet" value="vegetarian">
+                Kosher: <input type="checkbox" name="diet" value="kosher">
+                Lactose Free: <input type="checkbox" name="diet" value="lactoseFree">
+                No Restrictions: <input type="checkbox" name="diet" value="noRestrictions">
+        </div>
+        <button class="btn">Submit Form</button>
+    </form>    
 
-    
     <script src="travel.js"></script>
 </body>
 </html>
