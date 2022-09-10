@@ -1,9 +1,20 @@
-/* .myForm{
+body{
+    font-family: sans-serif;
+    font-size: bold;
+    /* background-image: url('img/travel.jpg'); */
+    background-repeat: no-repeat;
+}
+
+.userInfo, .travelOption, .food {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: column; 
 }
 
 input{
-    width: 150px;
-} */
+    margin: 10px;
+}
+
+button{
+    margin: 5px;
+}
+
