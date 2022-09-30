@@ -1,11 +1,12 @@
 // error handling 
-function sum(x,y){
-    if(typeof x !== "number"){
+//1a.
+function sum(num1, num2){
+    if(typeof num1 !== "number"){
         throw "you must use numbers only!"
-    }if(typeof y !== "number"){
+    }if(typeof num2 !== "number"){
         throw "this is not a number!"
     }
-    console.log(x + y)
+    console.log(num1 + num2)
 }
     try {
         sum(3, "b")
@@ -18,3 +19,4 @@ function sum(x,y){
     finally{
         console.log("this code will execute anyways.")
     }
+
