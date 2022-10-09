@@ -25,5 +25,44 @@
         }
     ],
 
+    "hot sandwiches": [
+        {
+            "name": "chipotel chicken avocado melt",
+            "ingredients": ["chicken", "chipotle peppers", "avocado", "cheese"],
+            "description": "Grilled panini with chicken, chipotle peppers, avocado and cheese"
+        },
+        {
+            "name": "grilled cheese",
+            "ingredients": ["sourdough bread", "cheese ", "mayo", "butter"],
+            "description": "Grilled sourdough on mayo and butter spread, with cheese of your choice. May add meats."
+        }
+    ],
+
+    "desserts": [
+        {
+            "name": "rolled-ice-cream",
+            "ingredients": ["fruint of choice", "toppings of choice", "sweet cream", "syrup of choice"],
+            "description": "Completely costumizable ice-cream." 
+
+        },
+        {
+            "name": "cupcakes",
+            "ingredients": ["chocolate cake base", "creamcheese frosting", "oreo crubmle"],
+            "description": "Chocolate cake base cupcake topped with cream cheese frosting and oreo crumle" 
+        }
+    ],
+    
+    "drinks": [
+        {
+            "name": "coffee",
+            "ingredients": ["colombian black coffee", "cream", "sugar"],
+            "description": "Freshly brewed colombian black coffee, with fresh sweet cream and sugar to liking" 
+        },
+        {
+            "name": "tea",
+            "ingredients": ["green tea", "black tea", "sugar", "honey", "lemon", "frozen berries"],
+            "description": "Tea of your choice, add sugar or honey, pour over frozen berries for a chilled taste." 
+        }
+    ]
 
 }
