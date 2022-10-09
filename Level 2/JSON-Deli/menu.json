@@ -1,0 +1,29 @@
+{
+    "appetizers": [
+        {
+            "name": "avocado rolls",
+            "ingredients": ["avocado", "tomato", "eggwrap", "cheese"],
+            "description": "Deep fried eggwarap cheese melt with avocado and tomato"
+        },
+        {
+            "name": "wings",
+            "ingredients": ["hot buffalo", "egg", "batter", "seasoning"],
+            "description": "Seasoned wings, dipped in batter and egg, deepfired and tossed in hot buffalo sause."
+        }
+    ],
+
+    "cold sandwiches": [
+        {
+            "name": "turkey sandwich",
+            "ingredients": ["whole grain bread", "tomato", "lattuce", "cheese", "cold turkey", "bacon"],
+            "description": "Toasted whole grain bread, topped with lattuce, tomatoe, cheese of your choice, cold turkey slices and bacon bits"
+        },
+        {
+            "name": "cranberry-walnut chicken salad sandwich ",
+            "ingredients": ["cranberry", "walnut", "chicken", "celery"],
+            "description": "Cold chicken salad with walnuts and cranberries, finely chopped celery, mayo, ranch seasoning"
+        }
+    ],
+
+
+}
