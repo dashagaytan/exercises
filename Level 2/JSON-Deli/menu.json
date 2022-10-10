@@ -62,6 +62,11 @@
             "name": "tea",
             "ingredients": ["green tea", "black tea", "sugar", "honey", "lemon", "frozen berries"],
             "description": "Tea of your choice, add sugar or honey, pour over frozen berries for a chilled taste." 
+        },
+        {
+            "name": "lemonade",
+            "ingredients": ["lemons", "sugar", "water"],
+            "description": "TFreshly squeezed Californian lemons, with organic cane sugar and fresh Alpine water." 
         }
     ]
 
