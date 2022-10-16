@@ -1,58 +1,265 @@
-body{
-    font-family: roboto;
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Julius Sans One', sans-serif; 
+}
+
+abbr{
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.01em;
+}
+
+h3{
+    margin: 2em 0 0 0;
+    color: #2e484c;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+p{
+    display: block;
+    font-size: 1em;
+    line-height: 2;
+    box-sizing: border-box;
+}
+
+#main-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(6);
+    color: #325050;
+}
+
+a:link, a:visited {
+    color: #0d8ba1;
+    text-decoration: none;
+}
+
+.banner{
+    background: #325050 url(images/huntington.jpeg) no-repeat scroll 0 0;
+
+}
+
+.view-design{
+    background: #325050 url(images/huntington.jpeg) no-repeat scroll 0 0;
+}
+
+#arrow-next{
+    grid: row 1/2;
+    grid-column: 3/4;
+    padding: 70px 30px 70px 0px;
+}
+
+#banner{
+    grid-row: 1/2;
+    grid-column: 1/3;
+    padding: 60px 0px 60px 350px;
+    color: #fff;
+}
+
+#banner1{
+    text-transform: uppercase;
+    margin-bottom: 1px;
+    font-size: 50px;
+}
+
+#banner2{
+    color: gba(255,255,255,0.6);
+    font-size: 1.6em;
+    font-style: italic;
+    margin-top: 1px;
+}
+
+.view-next{
+    list-style-type:none;
+    float: right;
+    margin: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.276);
+    background-color: rgba(255, 255, 255, 0.577);
+    padding: 9.5px;
+}
+
+#main-summary{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    padding: 40px 40px 40px 100px;
+}
+
+.authors{
+    color: #325050;
+    background-color: #d9e3dc;
+    grid-row: 2/3;
+    grid-column: 3/4;
+    display: block;
+    padding: 40px 0 40px 30px;
+}
+
+.author{
+    display: block;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    list-style-type: none;
+    padding: 10px;
+
+}
+.design{
+    display: block;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+a.author-name{
+    font-style: normal;
+    font-size: 0.9em;
+    color: #616857;
+    cursor: pointer;
+}
+
+#participation{
+    grid-row: 3/4;
+    grid-column: 1/3;
+    padding: 40px 40px 40px 100px;
+    color: #325050;
+    background-color: rgba(138,188,159,0.5);
+}
+
+#requirements{
+    grid-row: 4/5;
+    grid-column: 1/3;
+    padding: 40px 40px 40px 100px;
+    color: #325050;
     
 }
-.container {
-    display: grid;
-    /* with six rows, 50px high */
-    /* default all cells/children on the left be 2/3 the screen width, and all on the left 1/3 */
-}
-.container > div {
-    border: solid black 1px;
+
+#empty-div{
+    background-color: #d9e3dc;
+    grid-row: 4/5;
+    grid-column: 3/4;
 }
 
-.authors {
-    background-color: lightcoral
+#written-by{
+    background: #3e5d67 url(images/koi.jpg) no-repeat scroll 0 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    grid-row: 5/6;
+    grid-column: 1/4;
+    height: 150px;
+    padding: 50px 50px 50px 50px;
+
 }
-.links {
-    background-color: lightpink
+.links{
+    background-color:rgba(138, 188, 159, 0.694);
+    grid-row: 3/4;
+    grid-column: 3/4;
+    padding: 140px 35px 60px 35px;
 }
 
-.footer {
-    /* make these span the width of the page */
+.list-item{
+    list-style-type: disc;
+    text-transform: uppercase;
+    margin: 20px;
+    
+}
+
+#footer{
+    grid-row: 6/7;
+    grid-column: 1/5;
+    height: 100px;
     background-color: #134347;
     display: block;
     text-align: center;
-    padding: 3em 10%;
+    color: #fff;
+    
 }
 
-@media (max-width: 900px){
-    /* use this media query to help these two cells drop to the bottom when screens are smaller */
-    .authors {
-         
-    }
-    .links {
+.footer {
+    padding: 40px ;
+    font-size: 20px;
+    color: white;
+} 
 
-    }
-    /* container could use some help so that it's children are full screen width */
-    .container {
-        
-    }
+ .logo{
+    width: 40px;
+    justify-content: space-around;
 }
 
-/* FLEX */
-/* use flexbox to make the icons behave like css zen garden's social icons */
-.icons {
+body{
+    background: #fff;
+    font-size: 80%;
+}
+
+/* FLEX: USING flexbox */
+.footer{
     display: flex;
     justify-content: space-around;
-    width: 50%;
     margin: auto;
-    padding: 10px;
+    padding-top: 20px;
+    max-height: 80px;
 }
 
-.icons > div {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
+/* @media: styles applied for different media types/decices*/
+@media (max-width: 1000px){
+    #main-container{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(10, auto);
+    }
+
+    .view-design{
+        padding: 20px 200px 0px 200px;
+        font-size: 25px;
+    }
+
+    .banner{
+        grid-column: 1/3;
+        padding-bottom: 50px;
+    }
+
+    #main-summary, .view-design, #requirements{
+        grid-column:  1/3;
+    }
+
+    .view-next{
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    #empty-div{
+        grid-column: none;
+        grid-row: none;
+    }
+
+    .authors{
+        grid-row: 9;
+        background-color: white;
+        padding: 40px 5px;
+    }
+
+    .links{
+        grid-row: 10;
+        padding: 20px 5px;
+    }
+
+    .author{
+        float: left;
+        margin-left: 100px;
+    }
+
+    .links-list{
+        float: left;
+        margin-left: 150px;
+    }
+
+    #footer{
+        padding: 30px 30px;
+    }
+
+    .icons{
+        width: 100%;
+    }
 }
