@@ -5,8 +5,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   useEffect (()=> {
-    console.log("effect ran")
-  })
+    console.log("Effect ran")
+  },[])
 
   function handleAdd(){
     setCount(prevCount => prevCount +1)
