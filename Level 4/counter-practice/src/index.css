@@ -1,0 +1,14 @@
+body {
+  margin: auto;
+}
+
+button{
+  background-color: rgb(47, 89, 206);
+  color: white;
+  border-radius: 5px;
+}
+
+.main{
+  align-content: center;
+  text-align: center;
+}
