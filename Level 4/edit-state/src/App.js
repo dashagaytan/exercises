@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Post from './Post';
+import Form from './Form';
 
 function App() {
   const [blogPost, setBlogPost] = React.useState([
@@ -31,6 +32,10 @@ function updateBlog(id, updatedItem){
   })
 }
 
+  const addNewItem = (newItem) => {
+    setBlogPost(prevState=>[...prevState, newItem])
+  }
+
   const list = blogPost.map((post, index) => <Post
     key = {index+post.title}
     title = {post.title}
@@ -42,6 +47,9 @@ function updateBlog(id, updatedItem){
 
   return (
     <div className="app">
+      <h2>Add New Blog Post</h2>
+      <Form submit={addNewItem}/>
+      <h2>List of Blogs</h2>
       {list}
     </div>
   );

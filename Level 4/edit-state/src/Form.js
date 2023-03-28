@@ -2,14 +2,14 @@ import React, {useState} from "react";
 
 function Form(props){
 
-    const [postInput, setPostInput] = useState({
-        title: props.title,
-        description: props.description
+    const [postForm, setPostForm] = useState({
+        title: "",
+        description: ""
     })
 
     const handleChange =(e)=>{
         const {name, value} = e.target
-        setPostInput(prevState =>{
+        setPostForm(prevState =>{
             return {
                 ...prevState,
                 [name]: value      
@@ -18,10 +18,12 @@ function Form(props){
 
     const handleSubmit =(e)=>{
         e.preventDefault()
-        console.log("form was submited and these are the values: ")
-        console.log(postInput)
-        props.updateBlog(props.id, postInput)
-      
+       props.submit(postForm)
+       setPostForm({
+        title: "",
+        description: ""
+    })
+        
     }
 
     return(
@@ -29,13 +31,15 @@ function Form(props){
             <form onSubmit={handleSubmit}>
             <input
                 name="title"
-                value={postInput.title} 
+                placeholder="Enter Title"
+                value={postForm.title} 
                 onChange={handleChange}
                 />
 
             <input
                 name="description"
-                value={postInput.description} 
+                placeholder="Enter Description"
+                value={postForm.description} 
                 onChange={handleChange}
                 /> 
                 <button>Submit</button>
