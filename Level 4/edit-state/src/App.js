@@ -16,6 +16,10 @@ function App() {
 //to update a blog item
 //param updateItem will take in whatever new value the user wants to assign it to 
 function updateBlog(id, updatedItem){
+  console.log("updateBlog function in app.js was called")
+  console.log("the id of the item is: ", id)
+  console.log("the object is: ", updateBlog)
+
   setBlogPost(prevState => {
     return prevState.map((item, index)=> {
       if(index === id){
@@ -31,6 +35,8 @@ function updateBlog(id, updatedItem){
     key = {index+post.title}
     title = {post.title}
     description = {post.description}
+    updateBlog={updateBlog}
+    id={index}
    />)
 
 
