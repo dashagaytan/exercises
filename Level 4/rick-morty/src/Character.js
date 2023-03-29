@@ -22,22 +22,33 @@ function Character(props){
         })
     }
 
+    function handleSave(e){
+        e.preventDefault()
+        console.log("Edit form was saved")
+        console.log(formInputs)
+        props.editCharacter(props.id, formInputs)
+
+    }
+
     return(
         <div>
             {isEditOn ? 
-                <form>
+                <form onSubmit={handleSave}>
                     <input 
                     name ="firstName"
+                    placeholder="Enter new title"
                     value ={formInputs.firstName}
                     onChange={handleChange}
                     />
+
+                    <button>Save Changes</button>
                 </form>
                 :
                 <>
                     <h2>{props.name}</h2>
                 </>
             }
-            {/* <p>{props.id}</p> */}
+            <p>{props.id}</p>
             <img  src={props.image} alt=""/>
 
             <button onClick={toggleEdit}>{isEditOn ? "Close" : "Edit"}</button>

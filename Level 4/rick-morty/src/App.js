@@ -9,14 +9,25 @@ function App() {
 // render a character card for each char
 // edit each character
 
-const [background, setBackground] = useState("pink")
+// const [background, setBackground] = useState("pink")
 const [characters, setCharacters] = useState([])
 
-function editCharacter(id){
-  console.log("editCharacter function was called")
-
+function editCharacter(id, update){
+  // console.log("editCharacter function was called")
+  // console.log("editCharacter function is updating: ", id, " with an updata ", update)
+  setCharacters((prevState) => {
+    return prevState.map((character) => {
+      if(character.id === id){
+      return {
+        ...character,
+        name: update.firstName
+      }
+    }
+      else
+        return character
+    })
+  })
 }
-
 
 console.log("App component has mounted")
 
@@ -28,6 +39,7 @@ const list = characters.map((char)=>{
       key={char.id}
       name ={char.name}
       image ={char.image}
+      editCharacter ={editCharacter}
     />)
 })
 
@@ -40,7 +52,7 @@ useEffect(()=>{
 
 
   return (
-    <div className="app" style={{backgroundColor: background, height: "900"}}>
+    <div className="app" style={{background: "pink", height: "900"}}>
       <h1>Rick and Morty Characters: </h1>
       {list}
       {/* <button>Change Color</button> */}
