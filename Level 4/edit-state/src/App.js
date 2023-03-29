@@ -3,7 +3,7 @@ import Post from './Post';
 import Form from './Form';
 
 function App() {
-  const [blogPost, setBlogPost] = React.useState([
+  const [blogPost, setBlogPost] = useState([
     {
     title: "Title 1",
     description: "description 1"
