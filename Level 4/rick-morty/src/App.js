@@ -13,8 +13,8 @@ const [background, setBackground] = useState("pink")
 const [characters, setCharacters] = useState([])
 
 function editCharacter(id){
-  console.log("editCharacterFunction was called")
-  
+  console.log("editCharacter function was called")
+
 }
 
 
