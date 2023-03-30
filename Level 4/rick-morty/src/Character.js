@@ -5,7 +5,7 @@ function Character(props){
 
     const [isEditOn, setIsEditOn] = useState(false)
     const [formInputs, setFormInputs] = useState({
-        firstName: ""
+        firstName: props.name
     })
 
     function toggleEdit(){
@@ -36,7 +36,6 @@ function Character(props){
                 <form onSubmit={handleSave}>
                     <input 
                     name ="firstName"
-                    placeholder="Enter new title"
                     value ={formInputs.firstName}
                     onChange={handleChange}
                     />
