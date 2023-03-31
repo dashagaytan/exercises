@@ -15,6 +15,13 @@ function App() {
 
   }
 
+  function addName(){
+    //2. passing in a callback function that will
+    // give access to previous state
+    // overwrite, and add the new state
+    setNames()
+  }
+
   //mapping through the names state and render each name in a paragraph tag 
   const listNames = names.map((name, index)=> {
     return <p>{name}</p>
@@ -26,6 +33,7 @@ function App() {
       <h2>List of names: </h2>
       {listNames}
       <button onClick={changeUsername}>Change username</button>
+      <button onClick={addName}>Add Username</button>
     </div>
   );
 }
