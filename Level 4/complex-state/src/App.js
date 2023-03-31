@@ -5,6 +5,11 @@ function App() {
   //create state to store usernames
   const [username, setUsername] = useState("bob-bilby")
   const [names, setNames] = useState(["Lord", "Far", "Quad"])
+  const [style, setStyle] = useState({
+    backgroundColor: "pink",
+    width: "300px",
+    fontSize: "20px"
+  })
 
   console.log("App component rendered")
 
@@ -19,7 +24,30 @@ function App() {
     //2. passing in a callback function that will
     // give access to previous state
     // overwrite, and add the new state
-    setNames()
+    setNames((prevState)=> {
+      return [...prevState, username]
+
+    })
+  }
+
+  function changeOrange(){
+    //callback function with prevState to keep all the styles and only change the background color
+    setStyle((prevState) => {
+      return {
+        ...prevState,
+        backgroundColor: "orange"
+    }
+    })
+
+  }
+
+  function toggleBackground(){
+    setStyle((prevState)=> {
+      return {
+        ...prevState,
+        backgroundColor: prevState.backgroundColor === "pink" ? "orange" : "pink"
+      }
+    })
   }
 
   //mapping through the names state and render each name in a paragraph tag 
@@ -28,12 +56,14 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div className="App" style ={style}>
       <h2>My name is: {username}</h2>
       <h2>List of names: </h2>
       {listNames}
       <button onClick={changeUsername}>Change username</button>
       <button onClick={addName}>Add Username</button>
+      <button onClick={changeOrange}>Change Background Color to orange</button>
+      <button onClick={toggleBackground}>Toggle Background color</button>
     </div>
   );
 }
