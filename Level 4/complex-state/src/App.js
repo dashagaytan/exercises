@@ -83,8 +83,9 @@ function App() {
   }
 
   //mapping through the names state and render each name in a paragraph tag 
+  // each child in a list should have a unique "key" prop. Usualy it's an "id" 
   const listNames = names.map((name, index)=> {
-    return <p>{name}</p>
+    return <p key={name+index}>{name}</p>
   })
 
   return (
