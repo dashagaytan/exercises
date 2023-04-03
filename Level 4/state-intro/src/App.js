@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="app" style={{border: "1px solid purple", background: "pink", width: "300px", padding: "20px"}}> 
-    <h1>{name}</h1>
+    <h1 style={{color: "rgb(230, 120, 196)"}}>{name}</h1>
     <button onClick={changeName}>Change Name</button>
 
     </div>
