@@ -3,7 +3,7 @@ function App() {
 
   
   //with useState you pass in an initial value. data type: (string, object, array...)
-  const [name, setName] = useState("John Doe")
+  const [name, setName] = useState(["Bob", "Joe", "Jane"])
   console.log(`State: ${name}`)
 
   const changeName = () =>{
@@ -47,6 +47,13 @@ function App() {
     })
   }
 
+  function addName(){
+    const newName = "Ann";
+    setName(prevState => {
+      return [...prevState, newName]
+    })
+  }
+
   //mapping through a list of inputs and displaying them in DOM. 
   //each child component rendered must have a key identigier (index + item.firstName). if call from API we use id as key
   const listOfItems = list.map((item, index) => 
@@ -59,6 +66,7 @@ function App() {
     <div className="app" style={{background: "pink", width: "400px", padding: "20px"}}> 
     <h1 style={{color: "rgb(230, 120, 196)"}}>{name}</h1>
     <button onClick={changeName}>Change Name</button>
+    <button onClick={addName}>Add Name</button>
 <hr>
 </hr>
     <form onSubmit={handleSubmit}>
