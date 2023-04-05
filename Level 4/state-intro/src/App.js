@@ -11,11 +11,49 @@ function App() {
     console.log(changeName)
   }
 
+  const [formInfo, setFormInfo] = useState({
+    firstName: "",
+    imgUrl: ""
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+
+  }
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setFormInfo(prevState => {
+      return {
+        ...prevState, 
+        [name]: value
+      }
+    })
+  }
+
   return (
-    <div className="app" style={{border: "1px solid purple", background: "pink", width: "300px", padding: "20px"}}> 
+    <div className="app" style={{background: "pink", width: "400px", padding: "20px"}}> 
     <h1 style={{color: "rgb(230, 120, 196)"}}>{name}</h1>
     <button onClick={changeName}>Change Name</button>
+<hr>
+</hr>
+    <form onSubmit={handleSubmit}>
+      <input 
+      name = "firstName"
+      value = {formInfo.firstName}
+      placeholder="Name"
+      onChange={handleChange}
+      />
+      <input
+      name = "imgUrl"
+      value = {formInfo.imgUrl}
+      placeholder="Image Url "
+      onChange={handleChange}
+      />
+      <button>Submit</button>
 
+    </form>
     </div>
   );
 }
