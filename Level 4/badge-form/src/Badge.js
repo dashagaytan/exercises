@@ -1,6 +1,6 @@
 import React from "react";
 
-function BadgeCard(props){
+function Badge(props){
     return(
         <div className="badge-label">
         <h2>{props.firstName}</h2>
@@ -10,4 +10,4 @@ function BadgeCard(props){
     )
 }
 
-export default BadgeCard;
+export default Badge;

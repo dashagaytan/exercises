@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import BadgeCard from "./BadgeCard"
 
-function Form(){
+function Form(props){
 
     //state that hadnles the form inputs
     const [formData, setFormData] = useState({
@@ -9,9 +8,6 @@ function Form(){
         phoneNumber: "",
         favoriteFood: ""
     })
-
-    //state that will save and display user form inputs
-    const [badge, setBadge] = useState([]) 
 
     function handleChange(e){
         const {name, value} =e.target
@@ -25,33 +21,8 @@ function Form(){
 
     function handleSubmit(e){
         e.preventDefault();
-        setBadge(prevState =>{
-            return[
-                ...prevState,
-            {
-                firstName: formData.firstName,
-                phoneNumber: formData.phoneNumber,
-                favoriteFood: formData.favoriteFood
-            } 
-        ]
-        })
-        setFormData({
-            firstName: "",
-            phoneNumber: "",
-            favoriteFood: ""
-        })
+        props.addItemToBadge(formData);
     }
-
-    const badgeList = badge.map((item, index)=>{
-        return (
-            <BadgeCard 
-            firstName = {item.firstName}
-            phoneNumber = {item.phoneNumber}
-            favoriteFood = {item.favoriteFood}
-            key = {index+item.favoriteFood}
-            />
-        )
-    })
 
     return(
         <div className="form-container">
@@ -77,9 +48,6 @@ function Form(){
             />
             <button>Submit</button>
         </form>
-
-        {badgeList}
-
         </div>
     )
 }
