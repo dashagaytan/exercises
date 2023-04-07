@@ -48,14 +48,15 @@ function Form(){
             firstName = {item.firstName}
             phoneNumber = {item.phoneNumber}
             favoriteFood = {item.favoriteFood}
-            key = {index+item.firstName}
+            key = {index+item.favoriteFood}
             />
         )
     })
 
     return(
-        <div className="form">
+        <div className="form-container">
         <form onSubmit={handleSubmit}>
+            <h1 className="title">Badge Form</h1>
             <input 
             name ="firstName"
             value ={formData.firstName}
@@ -76,7 +77,9 @@ function Form(){
             />
             <button>Submit</button>
         </form>
+
         {badgeList}
+
         </div>
     )
 }

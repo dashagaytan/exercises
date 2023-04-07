@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.title{
+  font-weight: bold; 
+  font-size: 2rem; 
+  text-align: center; 
+  color: #333;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: 30px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+input{
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+input:focus{
+  outline: none;
+  border-color: #0077ff;
+  box-shadow: 0 0 5px #0077ff;
+}
+
+button{
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077ff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0055cc;
+}
+
+.badge-label{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h2{
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+}
+
+p{
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+h4{
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #777;
+}

@@ -2,11 +2,11 @@ import React from "react";
 
 function BadgeCard(props){
     return(
-        <>
-        <h3>{props.fristName}</h3>
+        <div className="badge-label">
+        <h2>{props.firstName}</h2>
         <p>{props.phoneNumber}</p>
-        <h6>{props.favoriteFood}</h6>
-        </>
+        <h4>{props.favoriteFood}</h4>
+        </div>
     )
 }
 
