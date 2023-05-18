@@ -2,18 +2,27 @@ const express = require("express")
 
 const app = express()
 
+app.use(express.json())
+
 //Fake data: 
-const users = [
-    { name: "Joe", age: 40 },
-    { name: "Bob", age: 30 },
-    { name: "Mil", age: 50 },
-    { name: "Don", age: 80 },
-    { name: "Bill", age: 10 }
+const movies = [
+    { title: "Titanic", genre: "drama" },
+    { title: "Spider Man", genre: "action" },
+    { title: "Lion King", genre: "fantasy" },
+    { title: "Star Wars", genre: "fantasy" },
+    { title: "Orphin", genre: "horror" }
 ]
-app.get("/users", (req, res)=> {
-    res.send(users)
+
+// get request 
+app.get("/movies", (req, res)=> {
+    res.send(movies)
 })
 
+app.post("/movies", (req, res)=>{
+    const newMovie = req.body
+    movies.push(newMovie)
+    res.send(`Added ${newMovie.title} to our Database`)
+})
 
 
 app.listen(9000, () => {
