@@ -35,5 +35,7 @@ movieRouter.route("/")
         movies.push(newMovie)
         res.send(`Added ${newMovie.title} to our Database`)
     })
+    //.put()
+    //.delete()
 
 module.exports = movieRouter
