@@ -16,7 +16,7 @@ tvShowsRouter.get("/", (req, res)=> {
     res.send(tvShows) //sends the request data 
 })
 
-//GET ONE
+//GET ONE using url params. 
 tvShowsRouter.get("/:tvShowsId", (req, res)=> {
     const tvShowsId = req.params.tvShowsId
     const foundTvShows = tvShows.find(tvShows => tvShows._id === tvShowsId)

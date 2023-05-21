@@ -1,4 +1,3 @@
-const { eventWrapper } = require('@testing-library/user-event/dist/utils')
 const express = require('express')
 const movieRouter = express.Router()
 const {v4: uuidv4} = require('uuid')
@@ -25,6 +24,13 @@ movieRouter.get("/:movieId", (req, res)=>{
     res.send(foundMovie)
 })
 
+//GET BY GENRE
+movieRouter.get("/search/genre", (req, res) => {
+    // console.log(req)
+    const genre = req.query.genre
+    const movieGenre = movies.filter(movie => movie.genre === genre)
+    res.send(movieGenre)
+})
 //when adding a new movie we need to assign it an _id
 //POST ONE
 movieRouter.post("/", (req, res)=>{
