@@ -22,6 +22,13 @@ tvShowsRouter.get("/:tvShowsId", (req, res)=> {
     const foundTvShows = tvShows.find(tvShows => tvShows._id === tvShowsId)
     res.send(foundTvShows)
 })
+
+//GET one using url query
+tvShowsRouter.get("/search/genre", (req, res)=> {
+    const genre = req.query.genre
+    const filteredTvShows = tvShows.filter( tvShows => tvShows.genre === genre)
+    res.send(filteredTvShows)
+})
 //post request tv shows
 tvShowsRouter.post("/", (req, res)=> {
     const newTvShow = req.body
