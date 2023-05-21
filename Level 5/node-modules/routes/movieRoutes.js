@@ -1,3 +1,4 @@
+const { eventWrapper } = require('@testing-library/user-event/dist/utils')
 const express = require('express')
 const movieRouter = express.Router()
 const {v4: uuidv4} = require('uuid')
@@ -11,30 +12,41 @@ const movies = [
     { title: "Orphin", genre: "horror", _id: uuidv4() }
 ]
 
-// get request movies
-// movieRouter.get("/", (req, res)=> {
-//     res.send(movies)
-// })
+//GET ALL
+movieRouter.get("/", (req, res)=> {
+    res.send(movies)
+})
+
+//GET ONE
+movieRouter.get("/:movieId", (req, res)=>{
+    // console.log(req.params.movieId)
+    const movieId = req.params.movieId
+    const foundMovie = movies.find(movie => movie._id === movieId)
+    res.send(foundMovie)
+})
 
 //when adding a new movie we need to assign it an _id
-// movieRouter.post("/", (req, res)=>{
-//     const newMovie = req.body   
-//     newMovie._id = uuidv4()
-//     movies.push(newMovie)
-//     res.send(`Added ${newMovie.title} to our Database`)
-// })
+//POST ONE
+movieRouter.post("/", (req, res)=>{
+    const newMovie = req.body   
+    newMovie._id = uuidv4()
+    movies.push(newMovie)
+    res.send(`Added ${newMovie.title} to our Database`)
+})
+
+
 
 //in each request that we are sending like get or post: instead of using the path "/ " express router has a declarative feature 
-movieRouter.route("/")
-    .get((req, res)=> {
-        res.send(movies)
-    })
-    .post((req, res)=>{
-        const newMovie = req.body   
-        newMovie._id = uuidv4()
-        movies.push(newMovie)
-        res.send(`Added ${newMovie.title} to our Database`)
-    })
+// movieRouter.route("/")
+//     .get((req, res)=> {
+//         res.send(movies)
+//     })
+//     .post((req, res)=>{
+//         const newMovie = req.body   
+//         newMovie._id = uuidv4()
+//         movies.push(newMovie)
+//         res.send(`Added ${newMovie.title} to our Database`)
+//     })
     //.put()
     //.delete()
 
