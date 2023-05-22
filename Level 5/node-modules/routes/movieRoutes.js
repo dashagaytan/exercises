@@ -40,7 +40,12 @@ movieRouter.post("/", (req, res)=>{
     res.send(`Added ${newMovie.title} to our Database`)
 })
 
-
+movieRouter.delete("/:movieId", (req, res)=>{
+    const movieId = req.params.movieId
+    const movieIndex = movies.findIndex(movie => movie._id === movieId)
+    movies.splice(movieIndex, 1)
+    console.log("Movie was deleted from Data Base!")
+})
 
 //in each request that we are sending like get or post: instead of using the path "/ " express router has a declarative feature 
 // movieRouter.route("/")

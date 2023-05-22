@@ -37,5 +37,12 @@ tvShowsRouter.post("/", (req, res)=> {
     res.send(`Added ${newTvShow.title} to our Database`)
 })
 
+//DELETE item from db
+tvShowsRouter.delete("/:tvShowId", (req, res)=>{
+    const tvShowId = req.params.tvShowId
+    const tvShowIndex = tvShows.findIndex(tvShow => tvShow._id === tvShowId)
+    tvShows.splice(tvShowIndex, 1)
+    console.log("TV Show was deleted from Data Base!")
+})
 
 module.exports = tvShowsRouter
