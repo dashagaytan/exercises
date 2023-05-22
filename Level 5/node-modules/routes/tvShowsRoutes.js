@@ -45,4 +45,13 @@ tvShowsRouter.delete("/:tvShowId", (req, res)=>{
     console.log("TV Show was deleted from Data Base!")
 })
 
+// UPDATE ONE / Put request
+tvShowsRouter.put("/:tvShowId", (req, res) => {
+    const tvShowId = req.params.tvShowId
+    const updateObject = req.body // for easier understanding 
+    const tvShowIndex = tvShows.findIndex(tvShow => tvShow._id === tvShowId)
+    const updateTvShow = Object.assign(tvShows[tvShowIndex], updateObject) //we couls also just use req.body instead of assigning it to updateObject
+    res.send(updateTvShow)
+})
+
 module.exports = tvShowsRouter

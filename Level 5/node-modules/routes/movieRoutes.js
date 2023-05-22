@@ -40,11 +40,20 @@ movieRouter.post("/", (req, res)=>{
     res.send(`Added ${newMovie.title} to our Database`)
 })
 
+//DELETE REQUEST 
 movieRouter.delete("/:movieId", (req, res)=>{
     const movieId = req.params.movieId
     const movieIndex = movies.findIndex(movie => movie._id === movieId)
     movies.splice(movieIndex, 1)
     console.log("Movie was deleted from Data Base!")
+})
+
+// UPDATE ONE / PUT REQUEST
+movieRouter.put("/:movieId", (req, res) => {
+    const movieId = req.params.movieId
+    const movieIndex = movies.findIndex(movie => movie._id === movieId)
+    const updateMovie = Object.assign(movies[movieIndex], req.body)
+    res.send(updateMovie)
 })
 
 //in each request that we are sending like get or post: instead of using the path "/ " express router has a declarative feature 
