@@ -23,7 +23,7 @@ movieRouter.get("/:movieId", (req, res)=>{
     const foundMovie = movies.find(movie => movie._id === movieId)
     res.send(foundMovie)
 })
-r
+
 //GET BY GENRE
 movieRouter.get("/search/genre", (req, res) => {
     // console.log(req)
