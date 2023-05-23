@@ -1,14 +1,18 @@
-function sum(a,b){
-    return a + b
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+
+export default function App(){
+    const [movies, setMovies]=useState([])
+
+    useEffect(()=>{
+        axios.get("/movies")
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
+
+    return(
+        <>
+        
+        </>
+    )
 }
-
-function subtract(a, b){
-    return a - b
-}
-
-function multiply(a,b){
-  return a * b
-}
-
-module.exports = {sum, subtract, multiply}
-
