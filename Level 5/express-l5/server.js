@@ -14,5 +14,3 @@ app.use("/tvShows", (require("./routes/tvShowsRoutes.js")))
 app.listen(9000, () => {
     console.log("The server is running on port 9000")
 })
-
-
