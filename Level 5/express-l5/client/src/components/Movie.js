@@ -2,7 +2,7 @@ import React from "react";
 
 function Movie(props){
     return (
-            <div className="movie-container">
+            <div className="movie">
                 <h4>{props.title} | {props.genre}</h4>
             </div>
     )

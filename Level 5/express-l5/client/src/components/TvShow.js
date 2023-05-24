@@ -2,7 +2,7 @@ import React from "react";
 
 function TvShow(props){
     return (
-            <div className="tvShow-container">
+            <div className="tvShow">
                 <h4>{props.title} | {props.genre}</h4>
             </div>
     )

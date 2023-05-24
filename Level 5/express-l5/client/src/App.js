@@ -30,11 +30,14 @@ function App(){
 
     return(
         <>
-            <h1 style={{textAlign: "center", color: "blueviolet"}}> Movies: </h1>
-            {movies.map(movie => <Movie {...movie} key ={movie.title}/>)}
-
-            <h1 style={{textAlign: "center", color: "blueviolet"}}> TV Shows: </h1>
-            {tvShows.map(tvShow => <TvShow {...tvShow} key ={tvShow.title}/>)}
+            <div className="movie-container">
+                <h1 style={{textAlign: "center", color: "blueviolet"}}> Movies: </h1>
+                {movies.map(movie => <Movie {...movie} key ={movie.title}/>)}
+            </div>
+            <div className="tvShow-container">
+                <h1 style={{textAlign: "center", color: "blueviolet"}}> TV Shows: </h1>
+                {tvShows.map(tvShow => <TvShow {...tvShow} key ={tvShow.title}/>)}
+            </div>
         </>
     )
 }
