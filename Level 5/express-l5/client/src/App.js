@@ -53,6 +53,14 @@ function App(){
         .catch(err => console.log(err))
     }
 
+    //DELETE request: using _id to referance to the item we want to get rid of 
+    function deleteMovie(movieId){
+        axios.delete(`/movies/${movieId}`)
+        .then(res => {
+            setMovies(prevMovies => prevMovies.filter(movie => movie._id !== movieId))
+        })
+        .catch(err => console.log(err))
+    }
 
     return(
         <>
@@ -61,7 +69,12 @@ function App(){
                  <AddMovieForm 
                  addMovie={addMovie}
                  /> 
-                {movies.map(movie => <Movie {...movie} key ={movie.title}/>)}
+                { movies.map(movie => 
+                    <Movie {...movie} 
+                    key ={movie.title}
+                    deleteMovie={deleteMovie}
+                />)}
+
             </div>
             <hr></hr>
             <div className="tvShow-container">

@@ -30,3 +30,12 @@ button{
     padding: 5px;
     margin: 2px;
 }
+
+.delete-btn{
+    margin-top: 5px;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(206, 31, 54);
+    color: white;
+    border-radius: 10px;
+}
