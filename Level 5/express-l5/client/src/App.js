@@ -62,6 +62,14 @@ function App(){
         .catch(err => console.log(err))
     }
 
+    function deleteTvShow(tvShowId){
+        axios.delete(`/tvShows/${tvShowId}`)
+        .then(res => {
+            setTvShows(prevState => prevState.filter(movie => movie._id !== tvShowId))
+        })
+        .catch(err => console.log(err))
+    }
+
     return(
         <>
             <div className="movie-container">
@@ -82,7 +90,11 @@ function App(){
                 <AddTvShowForm 
                 addTvShow = {addTvShow}
                 />
-                {tvShows.map(tvShow => <TvShow {...tvShow} key ={tvShow.title}/>)}
+                { tvShows.map(tvShow => 
+                <TvShow {...tvShow} 
+                key ={tvShow.title}
+                deleteTvShow={deleteTvShow}
+                />)}
             </div>
         </>
     )
