@@ -34,7 +34,7 @@ tvShowsRouter.post("/", (req, res)=> {
     const newTvShow = req.body
     newTvShow._id = uuidv4();
     tvShows.push(newTvShow)
-    res.send(`Added ${newTvShow.title} to our Database`)
+    res.send(newTvShow)
 })
 
 //DELETE item from db

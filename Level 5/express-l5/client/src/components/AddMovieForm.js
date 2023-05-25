@@ -7,13 +7,14 @@ const [inputs, setInputs] = useState(initInputs)
 
 
 function handleChange(e){
-    const {name, value} = e.target
+    const { name, value } = e.target
     setInputs(prevInputs => ({...prevInputs, [name]: value}))
 }
 
 function handleSubmit(e){
     e.preventDefault();
-    // put request
+    console.log(inputs)
+    props.addMovie(inputs); //after taking in props from our App component we have to pass in inputs that will take in user input
     setInputs(initInputs);
 }
 
@@ -21,16 +22,16 @@ function handleSubmit(e){
     return(
         <form onSubmit={handleSubmit}>
             <input
-            placeholder="Movie Title"
             type="text"
+            placeholder="Movie Title"
             name="title"
             vlaue={inputs.title}
             onChange={handleChange}
             />
 
             <input
-            placeholder="Genre"
             type="text"
+            placeholder="Genre"
             name="genre"
             vlaue={inputs.genre}
             onChange={handleChange}
