@@ -6,6 +6,7 @@ function TvShow(props){
             <div className="tvShow">
                 <h4>{title} | {genre}</h4>
                 <button className="delete-btn" onClick={() => props.deleteTvShow(_id)}>Delete</button>
+                <button className="edit-btn">Edit</button>
             </div>
     )
 }

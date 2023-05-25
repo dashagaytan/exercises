@@ -39,3 +39,9 @@ button{
     color: white;
     border-radius: 10px;
 }
+
+.edit-btn{
+    background-color: rgb(60, 60, 181);
+    color: white;
+    margin: 4px;
+}

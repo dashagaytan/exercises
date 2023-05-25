@@ -70,25 +70,37 @@ function App(){
         .catch(err => console.log(err))
     }
 
+    //PUT request: edits the title and genre
+    function editMovie(newMovie, movieId){
+        axios.put(`/movies/${movieId}`, newMovie)
+        .then(res => {
+            setMovies(prevState => prevState.map(movie => movie._id !== movieId ? movie : res.data)) //updates prev input with new input conditionaly
+        })
+        .catch(err => console.log(err))
+    }
+
     return(
         <>
             <div className="movie-container">
-                <h1 style={{textAlign: "center", color: "blueviolet"}}> Movies: </h1>
+                <h1 style={{color: "blueviolet"}}> Movies: </h1>
                  <AddMovieForm 
-                 addMovie={addMovie}
+                 submit={addMovie}
+                 btnText = "Add Movie"
                  /> 
                 { movies.map(movie => 
                     <Movie {...movie} 
                     key ={movie.title}
                     deleteMovie={deleteMovie}
+                    editMovie={editMovie}
                 />)}
 
             </div>
             <hr></hr>
             <div className="tvShow-container">
-                <h1 style={{textAlign: "center", color: "blueviolet"}}> TV Shows: </h1>
+                <h1 style={{color: "blueviolet"}}> TV Shows: </h1>
                 <AddTvShowForm 
-                addTvShow = {addTvShow}
+                submit = {addTvShow}
+                btnText = "Add TV Show"
                 />
                 { tvShows.map(tvShow => 
                 <TvShow {...tvShow} 

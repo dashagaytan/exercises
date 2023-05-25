@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./components.css"
 
 function AddTvShowForm(props){
-    const initInputs = {title: '', genre: ''}
+    const initInputs = {title: props.title || '', genre: props.genre || ''}
     const [inputs, setInputs]= useState(initInputs)
 
     function handleChange(e){
@@ -12,7 +12,7 @@ function AddTvShowForm(props){
 
     function handleSubmit(e){
         e.preventDefault()
-        props.addTvShow(inputs)
+        props.submit(inputs)
         setInputs(initInputs)
     }
 
@@ -34,7 +34,7 @@ function AddTvShowForm(props){
             vlaue={inputs.genre}
             onChange={handleChange}
             />
-            <button>Add Movie</button>
+            <button>{props.btnText}</button>
         </form>
         </div>
     )

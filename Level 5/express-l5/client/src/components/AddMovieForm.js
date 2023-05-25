@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 function AddMovieForm(props){
 
-const initInputs = {title: " ", genre: " "}
+const initInputs = {title: props.title || " ", genre: props.genre || " "}
 const [inputs, setInputs] = useState(initInputs)
 
 
@@ -15,7 +15,7 @@ function handleChange(e){
 function handleSubmit(e){
     e.preventDefault();
     console.log(inputs)
-    props.addMovie(inputs); //after taking in props from our App component we have to pass in inputs that will take in user input
+    props.submit(inputs, props._id); //after taking in props from our App component we have to pass in inputs that will take in user input
     setInputs(initInputs);
 }
 
@@ -38,7 +38,7 @@ function handleSubmit(e){
                 vlaue={inputs.genre}
                 onChange={handleChange}
                 />
-                <button>Add Movie</button>
+                <button>{props.btnText}</button>
             </form>
         </div>
     )
