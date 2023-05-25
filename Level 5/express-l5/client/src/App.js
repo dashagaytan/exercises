@@ -63,7 +63,7 @@ function App(){
                  /> 
                 {movies.map(movie => <Movie {...movie} key ={movie.title}/>)}
             </div>
-
+            <hr></hr>
             <div className="tvShow-container">
                 <h1 style={{textAlign: "center", color: "blueviolet"}}> TV Shows: </h1>
                 <AddTvShowForm 

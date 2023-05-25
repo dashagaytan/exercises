@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./components.css"
 
 function AddTvShowForm(props){
     const initInputs = {title: '', genre: ''}
@@ -16,24 +17,26 @@ function AddTvShowForm(props){
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-        <input
-        type="text"
-        placeholder="Movie Title"
-        name="title"
-        vlaue={inputs.title}
-        onChange={handleChange}
-        />
+        <div className="form-container">
+            <form onSubmit={handleSubmit}>
+            <input
+            type="text"
+            placeholder="Movie Title"
+            name="title"
+            vlaue={inputs.title}
+            onChange={handleChange}
+            />
 
-        <input
-        type="text"
-        placeholder="Genre"
-        name="genre"
-        vlaue={inputs.genre}
-        onChange={handleChange}
-        />
-        <button>Add Movie</button>
-    </form>
+            <input
+            type="text"
+            placeholder="Genre"
+            name="genre"
+            vlaue={inputs.genre}
+            onChange={handleChange}
+            />
+            <button>Add Movie</button>
+        </form>
+        </div>
     )
 }
 
