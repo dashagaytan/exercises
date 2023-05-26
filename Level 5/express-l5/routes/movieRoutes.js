@@ -17,10 +17,16 @@ movieRouter.get("/", (req, res)=> {
 })
 
 //GET ONE
-movieRouter.get("/:movieId", (req, res)=>{
+movieRouter.get("/:movieId", (req, res, next)=>{
     // console.log(req.params.movieId)
     const movieId = req.params.movieId
     const foundMovie = movies.find(movie => movie._id === movieId)
+    if(!foundMovie){
+        const error = new Error("The item was not found")
+        error.status = 404
+        return next(error)
+    }
+
     res.send(foundMovie)
 })
 
@@ -38,7 +44,7 @@ movieRouter.post("/", (req, res)=>{
     newMovie._id = uuidv4()
     movies.push(newMovie)
     res.send(newMovie)
-})
+}) 
 
 //DELETE REQUEST 
 movieRouter.delete("/:movieId", (req, res)=>{

@@ -17,7 +17,7 @@ function App(){
             console.log(res.data)
             setMovies(res.data)
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err.response.data.errMsg)) // error handler on server side will catch and console log it for FE to see the err msg
     }
     useEffect(()=> {
         getMovies()
