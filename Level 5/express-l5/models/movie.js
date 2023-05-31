@@ -4,7 +4,13 @@ const Schema = mongoose.Schema
 //Movie blueprint
 
 const movieSchema = new Schema({
-    title: String, 
-    genre: String,
+    title: {
+        type: String,
+        required: true
+    }, 
+    genre: {
+        type: String,
+        required: true
+    },
     releaseYear: Number
 })
