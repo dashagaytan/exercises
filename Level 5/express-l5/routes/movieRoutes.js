@@ -1,19 +1,24 @@
 const express = require('express')
 const movieRouter = express.Router()
-const {v4: uuidv4} = require('uuid')
+const Movie = require("../models/movie.js")
 
 //Fake data: movies
-const movies = [
-    { title: "Titanic", genre: "drama", _id: uuidv4()  },
-    { title: "Spider Man", genre: "action", _id: uuidv4() },
-    { title: "Lion King", genre: "fantasy", _id: uuidv4() },
-    { title: "Star Wars", genre: "fantasy", _id: uuidv4() },
-    { title: "Orphin", genre: "horror", _id: uuidv4() }
-]
+// const movies = [
+//     { title: "Titanic", genre: "drama", _id: uuidv4()  },
+//     { title: "Spider Man", genre: "action", _id: uuidv4() },
+//     { title: "Lion King", genre: "fantasy", _id: uuidv4() },
+//     { title: "Star Wars", genre: "fantasy", _id: uuidv4() },
+//     { title: "Orphin", genre: "horror", _id: uuidv4() }
+// ]
 
 //GET ALL
-movieRouter.get("/", (req, res)=> {
-    res.status(200).send(movies)
+movieRouter.get("/", (req, res, next)=> {
+    Movie.find((err, movies) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        } return res.status(200).send(movies)
+    })
 })
 
 //GET ONE
