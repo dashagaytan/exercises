@@ -2,23 +2,16 @@ const express = require('express')
 const movieRouter = express.Router()
 const Movie = require("../models/movie.js")
 
-//Fake data: movies
-// const movies = [
-//     { title: "Titanic", genre: "drama", _id: uuidv4()  },
-//     { title: "Spider Man", genre: "action", _id: uuidv4() },
-//     { title: "Lion King", genre: "fantasy", _id: uuidv4() },
-//     { title: "Star Wars", genre: "fantasy", _id: uuidv4() },
-//     { title: "Orphin", genre: "horror", _id: uuidv4() }
-// ]
-
 //GET ALL
 movieRouter.get("/", (req, res, next)=> {
-    Movie.find((err, movies) => {
-        if(err){
-            res.status(500)
-            return next(err)
-        } return res.status(200).send(movies)
+    Movie.find({})
+    .then(movies => {
+      return res.status(200).send(movies);
     })
+    .catch(err => {
+      res.status(500);
+      return next(err);
+    });
 })
 
 //GET ONE
@@ -48,13 +41,18 @@ movieRouter.get("/search/genre", (req, res, next) => {
     const movieGenre = movies.filter(movie => movie.genre === genre)
     res.status(200).send(movieGenre)
 })
-//when adding a new movie we need to assign it an _id
+
 //POST ONE
-movieRouter.post("/", (req, res)=>{
-    const newMovie = req.body   
-    newMovie._id = uuidv4()
-    movies.push(newMovie)
-    res.status(201).send(newMovie)
+movieRouter.post("/", (req, res, next)=>{
+    const newMovie = new Movie(req.body);
+    newMovie.save()
+      .then(savedMovie => {
+        return res.status(201).send(savedMovie);
+      })
+      .catch(err => {
+        res.status(500);
+        return next(err);
+      });
 }) 
 
 //DELETE REQUEST 

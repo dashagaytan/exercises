@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 function AddMovieForm(props){
 
-const initInputs = {title: props.title || " ", genre: props.genre || " "}
+const initInputs = {title: props.title || " ", genre: props.genre || " ", releaseYear: props.releaseYear || " "}
 const [inputs, setInputs] = useState(initInputs)
 
 
@@ -36,6 +36,13 @@ function handleSubmit(e){
                 placeholder="Genre"
                 name="genre"
                 vlaue={inputs.genre}
+                onChange={handleChange}
+                />
+                  <input
+                type="text"
+                placeholder="Release Year"
+                name="releaseYear"
+                vlaue={inputs.releaseYear}
                 onChange={handleChange}
                 />
                 <button>{props.btnText}</button>

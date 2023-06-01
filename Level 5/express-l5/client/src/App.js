@@ -92,8 +92,8 @@ function App(){
                     key ={movie.title}
                     deleteMovie={deleteMovie}
                     editMovie={editMovie}
-                />)}
-
+                />
+                )}
             </div>
             <hr></hr>
             <div className="tvShow-container">

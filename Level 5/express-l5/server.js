@@ -19,7 +19,6 @@ mongoose.connect('mongodb://localhost:27017/moviesdb',
 
 // Routes we tell the app to use our routes that we have created in order for the server to see it.
 app.use("/movies", require("./routes/movieRoutes.js"))
- 
 app.use("/tvShows", (require("./routes/tvShowsRoutes.js")))
 
 //error handler
