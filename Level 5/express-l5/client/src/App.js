@@ -79,6 +79,10 @@ function App(){
         .catch(err => console.log(err))
     }
 
+    function handleFilter(e){
+        console.log(e.target.value)
+    }
+
     return(
         <>
             <div className="movie-container">
@@ -87,6 +91,15 @@ function App(){
                  submit={addMovie}
                  btnText = "Add Movie"
                  /> 
+
+                 <h4>Filter by Genre</h4>
+                    <select onChange={handleFilter} className="filter-form">
+                        <potion>- Select a Genre -</potion>
+                        <option value="action">Action</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="drama">Drama</option>
+                    </select>
+
                 { movies.map(movie => 
                     <Movie {...movie} 
                     key ={movie.title}

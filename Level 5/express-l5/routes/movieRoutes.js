@@ -57,10 +57,11 @@ movieRouter.post("/", (req, res, next)=>{
 
 //DELETE REQUEST 
 movieRouter.delete("/:movieId", (req, res, next)=>{
-    Movie.findOneAndDelete({_id: req.params.movieId})
+    Movie.findOneAndDelete(
+        {_id: req.params.movieId})
         .then((deletedItem)=> {
             if(!deletedItem){
-                return res.status(404).send("Movie not found");
+                return res.status(404).send("Item not found");
             }
             return res.status(200).send(`Successfully deleted item ${deletedItem.title} from the database`)
         })
@@ -72,24 +73,20 @@ movieRouter.delete("/:movieId", (req, res, next)=>{
 
 // UPDATE ONE / PUT REQUEST
 movieRouter.put("/:movieId", (req, res) => {
-    const movieId = req.params.movieId
-    const movieIndex = movies.findIndex(movie => movie._id === movieId)
-    const updateMovie = Object.assign(movies[movieIndex], req.body)
-    res.status(202).send(updateMovie)
+    Movie.findOneAndUpdate(
+        {_id: req.params.movieId},       // find this one to update
+        req.body,                        // new data, update the object with this data
+        { new: true })                   // send back the updated version 
+            .then((updatedItem)=> {
+            if(!updatedItem){
+                return res.status(404).send("Item not found")
+            }
+            return res.status(200).send(updatedItem)
+        })
+        .catch((err)=> {
+            res.status(500)
+            return next(err)
+        })
 })
-
-//in each request that we are sending like get or post: instead of using the path "/ " express router has a declarative feature 
-// movieRouter.route("/")
-//     .get((req, res)=> {
-//         res.send(movies)
-//     })
-//     .post((req, res)=>{
-//         const newMovie = req.body   
-//         newMovie._id = uuidv4()
-//         movies.push(newMovie)
-//         res.send(`Added ${newMovie.title} to our Database`)
-//     })
-    //.put()
-    //.delete()
 
 module.exports = movieRouter
