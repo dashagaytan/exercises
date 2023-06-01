@@ -56,11 +56,18 @@ movieRouter.post("/", (req, res, next)=>{
 }) 
 
 //DELETE REQUEST 
-movieRouter.delete("/:movieId", (req, res)=>{
-    const movieId = req.params.movieId
-    const movieIndex = movies.findIndex(movie => movie._id === movieId)
-    movies.splice(movieIndex, 1)
-    console.log("Movie was deleted from Data Base!")
+movieRouter.delete("/:movieId", (req, res, next)=>{
+    Movie.findOneAndDelete({_id: req.params.movieId})
+        .then((deletedItem)=> {
+            if(!deletedItem){
+                return res.status(404).send("Movie not found");
+            }
+            return res.status(200).send(`Successfully deleted item ${deletedItem.title} from the database`)
+        })
+        .catch((err)=>{
+            res.status(500)
+            return next(err)
+        })
 })
 
 // UPDATE ONE / PUT REQUEST
